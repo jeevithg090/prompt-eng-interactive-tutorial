@@ -1,0 +1,19 @@
+# Tooling configuration for this fork (tests and linting only).
+# The tutorial itself is a set of Jupyter notebooks and is not a Python package.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: executes notebooks end to end with an offline SDK stub"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+# Notebooks are lesson content and are kept exactly as the original authors wrote them.
+extend-exclude = ["*.ipynb"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# The hint files are long prose strings written by the original authors.
+"**/hints.py" = ["E501", "W291", "W293"]
