@@ -1,0 +1,7 @@
+# Dependencies for the "Anthropic 1P" notebooks (Claude API).
+# The Amazon Bedrock notebooks use AmazonBedrock/requirements.txt instead.
+#
+# anthropic is kept below 1.0: the lessons pass `temperature`, which the 1.x SDK
+# removes from `messages.create()`, and 2.x switches to a newer API version.
+anthropic>=0.40,<1
+jupyterlab>=4
